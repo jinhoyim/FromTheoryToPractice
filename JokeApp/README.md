@@ -2,9 +2,6 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
-## 내용
-Udemy의 Angular 강의 `From Theory to Practice`의 예제 코드 중 Quickstart를 Angular CLI 이용해서 구현
-
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
