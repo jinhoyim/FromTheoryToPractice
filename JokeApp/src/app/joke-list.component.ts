@@ -1,19 +1,28 @@
 import { Joke } from './joke';
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { JokeComponent } from './joke.component';
 
 @Component({
   selector: 'joke-list',
   templateUrl: './joke-list.component.html'
 })
-export class JokeListComponent {
+export class JokeListComponent implements AfterViewInit {
   jokes: Joke[];
+
+  @ViewChild(JokeComponent) jokeViewChild: JokeComponent;
 
   constructor() {
     this.jokes = [
       new Joke("What did the cheese say when it looked in the mirror?", "Hello-me (Halloumi)"),
       new Joke("What kind of cheese do you use to disguise a small horse?", "Mask-a-pony (Mascarpone)"),
-      new Joke("A kid threw a lump of cheddar at me", "I thought ‘That’s not very mature’"),
+      
     ];
+
+    console.log(`new - jokeViewChild is ${this.jokeViewChild}`);
+  }
+
+  ngAfterViewInit() {
+    console.log(`ngAfterViewInit - jokeViewChild is ${this.jokeViewChild}`);
   }
 
   addJoke(joke) {
